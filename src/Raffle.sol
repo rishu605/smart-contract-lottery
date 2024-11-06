@@ -124,4 +124,12 @@ contract Raffle {
         return s_players[indexOfPlayer];
     }
 
+    function getRaffleStartTime() external view returns(uint256) {
+        return s_raffleStartTime;
+    }
+
+    function getRecentWinner() external view returns(address) {
+        return recentWiner;
+    }
+
 }
