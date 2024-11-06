@@ -1,0 +1,41 @@
+Compiling 48 files with Solc 0.8.28
+Solc 0.8.28 finished in 1.79s
+Compiler run successful with warnings:
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+  --> src/Raffle.sol:79:79:
+   |
+79 |     function checkUpkeep(bytes memory) public view returns(bool upkeepNeeded, bytes memory /*performData */) {
+   |                                                                               ^^^^^^^^^^^^
+
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+  --> src/Raffle.sol:87:100:
+   |
+87 |     function performUpkeep( bytes calldata /* performData */) external intervalNotComplete returns(uint256) {
+   |                                                                                                    ^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+  --> src/RandomNumberGenerator.sol:50:30:
+   |
+50 |     function getRecentWinner(uint256 requestId, uint256[] memory randomWords, address payable[] memory s_players) public returns(address){
+   |                              ^^^^^^^^^^^^^^^^^
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> src/RandomNumberGenerator.sol:50:5:
+   |
+50 |     function getRecentWinner(uint256 requestId, uint256[] memory randomWords, address payable[] memory s_players) public returns(address){
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Analysing contracts...
+Running tests...
+
+Ran 1 test for test/unit/Raffletest.t.sol:RaffleTest
+[FAIL: setup failed: InvalidSubscription()] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 223.15ms (0.00ns CPU time)
+
+Ran 1 test suite in 227.62ms (223.15ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/unit/Raffletest.t.sol:RaffleTest
+[FAIL: setup failed: InvalidSubscription()] setUp() (gas: 0)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
